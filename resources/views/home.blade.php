@@ -13,8 +13,27 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                   You're logged in!
+                    <div class="d-none d-md-block main-nav-links">
+                        <ul class="nav nav-pills nav-fill form-tabs" role="tablist">
+                          <li class="nav-item">
+                              <a class="main-link nav-link active create" data-toggle="tab" href="#create" role="tab">
+                                  <span>{{$title}}</span>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="main-link nav-link list" data-toggle="tab" href="#list" role="tab">
+                                  <span>List all </span>
+                              </a>
+                          </li>
+                        </ul>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <div class="tab-content mt-2">
+                          @include('employees.create')  
+                          @include('employees.list')
+                      </div>                     
+                    </div>
                 </div>
             </div>
         </div>
